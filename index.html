@@ -13,6 +13,19 @@
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
     <!-- font awesome -->
     <script src="https://kit.fontawesome.com/b3cf6811f4.js" crossorigin="anonymous"></script>
+    <!-- color -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              clifford: '#da373d',
+              fruit: '#F85559',
+            }
+          }
+        }
+      }
+    </script>
     <style>
       .font-lato{
         font-family: 'Lato', sans-serif;
@@ -22,7 +35,7 @@
 <body>
     <header>
         <!-- navbar -->
-        <nav class="py-4">
+        <nav class="py-4 px-20">
             <div class="navbar bg-red-500 rounded-full ">
                 <div class="navbar-start">
                   <div class="dropdown">
@@ -46,18 +59,20 @@
                   </div>
                 </div>
                 <div class="navbar-center">
-                  <a class="btn btn-ghost normal-case text-2xl text-white"><img src="./images/logo.png" alt=""> Fruit Burst</a>
+                  <a class="btn btn-ghost normal-case text-2xl text-white"><img class="h-3/4" src="./images/logo.png" alt=""> Fruit Burst</a>
                 </div>
                 <div class="navbar-end hidden lg:flex">
                       <div class="flex-none gap-2">
-                        <form class="inline" action="">
-                        <div class="input-icons">
-                         
+                        <form class="flex items-center">
+                          <label for="magnifying-glass" class="sr-only">search</label>
+                        <div class="relative">
+                          <div>
                             <input type="text" placeholder="Search"
-                          class="input rounded-full input-bordered w-24 md:w-auto" />
-                          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
-                        <i class="fa-solid fa-magnifying-glass"></i>
-                          
+                            class="input rounded-full input-bordered w-24 md:w-auto" />
+                            <button type="button" class="absolute inset-y-0 right-0 flex items-center pr-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
+                          </button>
+                        </div>
                         </div>
                       </form>
                 </div>
@@ -66,19 +81,58 @@
 </header>
 <main>
   <!-- banner section -->
-  <section class="py-4">
-    <div class="carousel w-full">
+  <section class="py-4 px-20">
+    <div class="carousel ">
       <div id="slide1" class="carousel-item relative w-full">
-        <div>
+        <div class="relative">
+         <div class="hero h-full w-full" style="background-image: url(./images/banner1.png);">
           
-          <img src="./images/banner1.png" class="w-full" />
-          <h3>Exotic tastes at your doorstep</h3>
+          <div class="hero-overlay bg-opacity-60"></div>
+          <div class=" hero-content text-center">
+            <div class="">
+              <h1 class="mb-5 text-5xl font-bold text-white">Exotic tastes at your
+                <br> doorstep</h1>
+              <p class="mb-5 text-white">We supply highly quality organic products.We do not compromise our products quality.We always maintain a very strict hygienic way to supply you our products.  </p>
+              <button class="btn btn-error text-white">Shop now</button>
+              
+            </div>
+            
+           </div>
+           
+         </div>
+         
           <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
           <a href="#slide4" class="btn btn-circle">❮</a> 
           <a href="#slide2" class="btn btn-circle">❯</a>
+          <div class="flex justify-center border-2 bg-white mb-10">
+            <div>
+              <img class="w-3/4" src="./images/fruit1.png" alt="">
+              <p>Strawberry</p>
+            </div>
+            <div>
+              <img class="w-3/4" src="./images/fruit2.png" alt="">
+              <p>Orange</p>
+            </div>
+            <div>
+              <img class="w-3/4" src="./images/fruit3.png" alt="">
+              <p>Mango</p>
+            </div>
+            <div>
+              <img class="w-3/4" src="./images/fruit4.png" alt="">
+              <p>Strawberry</p>
+            </div>
+            <div>
+              <img class="w-3/4" src="./images/fruit5.png" alt="">
+              <p>Mango</p>
+            </div>
           </div>
+          </div>
+          
         </div>
+        
       </div> 
+      
+      
       <div id="slide2" class="carousel-item relative w-full">
         <img src="./images/banner2.png" class="w-full" />
         <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
@@ -101,7 +155,165 @@
         </div>
       </div>
     </div>
-  </section>
+    </section>
+    <!-- date time -->
+    <section class="py-4 px-20">
+        <div class="flex justify-between">
+          <div>
+            <h2 class="text-2xl font-bold mb-4">Deal of the day</h2>
+            <p>Contrary to popular belief, is not simply random text. It has roots in a piece of classical <br> Latin literature from 45 BC, making it over 2000 years old.</p>
+          </div>
+          <div class="flex gap-5">
+            <div>
+              <h3 class="text-2xl font-bold mb-3">29</h3>
+              <p>Days</p>
+              
+            </div>
+            <i class="fa-solid fa-ellipsis-vertical mt-5"></i>
+            <div>
+              <h3 class="text-2xl font-bold mb-3">15</h3>
+              <p>Hours</p>
+            </div>
+            <i class="fa-solid fa-ellipsis-vertical mt-5"></i>
+            <div>
+              <h3 class="text-2xl font-bold mb-3">25</h3>
+              <p>Minutes</p>
+            </div>
+            <i class="fa-solid fa-ellipsis-vertical mt-5"></i>
+            <div>
+              <h3 class="text-2xl font-bold mb-3">08</h3>
+              <p>Seconds</p>
+            </div>
+          </div>
+        </div>
+    </section>
+    <!-- card -->
+<section class="py-4 px-20">
+  <div class="flex gap-5">
+      <!-- first card -->
+    <div class="card w-96 bg-base-100 shadow-xl">
+      <figure class="px-10 pt-10">
+        <img src="./images/fruit6.png" alt="Shoes" class="rounded-xl" />
+      </figure>
+      <div class="card-body items-center text-center">
+        <h2 class="card-title">12.90$ - 18.85$</h2>
+        <p>Apples</p>
+        
+        <img src="./Group 24.svg" alt="">
+        <div class="card-actions">
+          <!-- Open the modal using ID.showModal() method -->
+          <button class="btn text-fruit" onclick="my_modal_5.showModal()">Details</button>
+          <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
+            <form method="dialog" class="modal-box modal-middle">
+              <img class="ml-20" src="./images/fruit6.png" alt="">
+              <h3 class="font-bold text-lg">Apples</h3>
+              <p class="py-4">Professional employees are there for you to pick the most amazing and fresh fruits.</p>
+              <img src="./Group 24.svg" alt="">
+              <div class="modal-action">
+                <!-- if there is a button in form, it will close the modal -->
+                <button class="btn text-fruit border-fruit">Close</button>
+                <button class="btn btn-error text-white">Shop now</button>
+              </div>
+            </form>
+          </dialog>
+        </div>
+      </div>
+    </div>
+  
+  <!-- second card -->
+  <div class="card w-96 bg-base-100 shadow-xl">
+    <figure class="px-10 pt-10">
+      <img src="./images/fruit7.png" alt="Shoes" class="rounded-xl" />
+    </figure>
+    <div class="card-body items-center text-center">
+      <h2 class="card-title">12.90$ - 18.85$</h2>
+      <p>Apples</p>
+      
+      <img src="./Group 24.svg" alt="">
+      <div class="card-actions">
+        <!-- Open the modal using ID.showModal() method -->
+        <button class="btn text-fruit" onclick="my_modal_5.showModal()">Details</button>
+        <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
+          <form method="dialog" class="modal-box modal-middle">
+            <img class="ml-20" src="./images/fruit7.png" alt="">
+            <h3 class="font-bold text-lg">Apples</h3>
+            <p class="py-4">Professional employees are there for you to pick the most amazing and fresh fruits.</p>
+            <img src="./Group 24.svg" alt="">
+            <div class="modal-action">
+              <!-- if there is a button in form, it will close the modal -->
+              <button class="btn text-fruit border-fruit">Close</button>
+              <button class="btn btn-error text-white">Shop now</button>
+            </div>
+          </form>
+        </dialog>
+      </div>
+    </div>
+  </div> 
+
+<!-- third card -->
+<div class="card w-96 bg-base-100 shadow-xl">
+  <figure class="px-10 pt-10">
+    <img src="./images/fruit8.png" alt="Shoes" class="rounded-xl" />
+  </figure>
+    <div class="card-body items-center text-center">
+      <h2 class="card-title">12.90$ - 18.85$</h2>
+      <p>Apples</p>
+      <img src="./Group 24.svg" alt="">
+      <div class="card-actions">
+        <!-- Open the modal using ID.showModal() method -->
+        <button class="btn text-fruit" onclick="my_modal_5.showModal()">Details</button>
+        <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
+          <form method="dialog" class="modal-box modal-middle">
+            <img class="ml-20" src="./images/fruit8.png" alt="">
+            <h3 class="font-bold text-lg">Apples</h3>
+            <p class="py-4">Professional employees are there for you to pick the most amazing and fresh fruits.</p>
+            <img src="./Group 24.svg" alt="">
+              <div class="modal-action">
+                <!-- if there is a button in form, it will close the modal -->
+                <button class="btn text-fruit border-fruit">Close</button>
+                <button class="btn btn-error text-white">Shop now</button>
+              </div>
+          </form>
+        </dialog>
+      </div>
+     </div>
+  </div>
+<!-- fourth card -->
+  <div class="card w-96 bg-base-100 shadow-xl">
+  <figure class="px-10 pt-10">
+    <img src="./images/fruit9.png" alt="Shoes" class="rounded-xl" />
+  </figure>
+    <div class="card-body items-center text-center">
+    <h2 class="card-title">12.90$ - 18.85$</h2>
+    <p>Apples</p>
+    
+    <img src="./Group 24.svg" alt="">
+      <div class="card-actions">
+        <!-- Open the modal using ID.showModal() method -->
+        <button class="btn text-fruit" onclick="my_modal_5.showModal()">Details</button>
+        <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
+          <form method="dialog" class="modal-box modal-middle">
+            <img class="ml-20" src="./images/fruit9.png" alt="">
+            <h3 class="font-bold text-lg">Apples</h3>
+            <p class="py-4">Professional employees are there for you to pick the most amazing and fresh fruits.</p>
+            <img src="./Group 24.svg" alt="">
+              <div class="modal-action">
+               <!-- if there is a button in form, it will close the modal -->
+               <button class="btn text-fruit border-fruit">Close</button>
+               <button class="btn btn-error text-white">Shop now</button>
+              </div>
+          </form>
+        </dialog>
+      </div>
+    </div>
+  </div>
+
+</div>
+<div>
+  <button class="btn btn-error text-white justify-center items-center text-center">Shop now</button>
+</div>
+
+</section>
 </main>
 </body>
 </html>
