@@ -1,0 +1,7 @@
+.banner{
+    background-image: url('./images/banner1.png');
+    background-repeat: no-repeat;
+}
+#slide1{
+    background-image: url(./images/banner1.png), url(./images/banner2.png), url(./images/banner3.png), url(./images/banner4.png);
+}
